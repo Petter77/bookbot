@@ -19,3 +19,15 @@ def count_characters(text):
         else:
             dictionary[character] += 1
     return dictionary
+
+def sort_on(items: dict):
+    return items["num"]
+
+def prepare_data_for_report(items: dict):
+    result = []
+    for item in items:
+        result.append({"char":item, "num":items[item]})
+
+    result.sort(reverse=True, key=sort_on)
+    return result
+
